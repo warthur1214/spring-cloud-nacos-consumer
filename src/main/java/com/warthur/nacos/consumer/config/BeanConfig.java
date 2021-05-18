@@ -11,11 +11,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfig {
 
-    @Value("${spring.application.name}")
-    private String appName;
-
-    @Bean
-    public SpringApp springApp() {
-        return new SpringApp().setAppName(appName);
-    }
 }
