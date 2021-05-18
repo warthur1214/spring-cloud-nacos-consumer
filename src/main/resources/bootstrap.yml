@@ -11,46 +11,14 @@ spring:
       password: yongqiang
       discovery:
         server-addr: localhost:8848
-    loadbalancer:
-      ribbon:
-        enabled: false
-
-feign:
-  sentinel:
-    enabled: true
-  client:
-    config:
-      default:
-        loggerLevel: full
-        connectTimeout: 5000
-        readTimeout: 15000
-logging:
-  level:
-    com.warthur.nacos: debug
-
-dubbo:
-  application:
-    owner: warthur
-    name: ${spring.application.name}
-    version: 0.0.1
-    organization: warthur.com
-  registry:
-    address: nacos://${spring.cloud.nacos.discovery.server-addr}?username=${spring.cloud.nacos.username}&password=${spring.cloud.nacos.password}
-    parameters:
-      namespace: ${spring.cloud.nacos.discovery.namespace}
-    group: dubbo
-    use-as-config-center: false
-    use-as-metadata-center: false
-    register: false
-  protocol:
-    name: dubbo
-    port: -1
-  consumer:
-    timeout: 3000
-    loadbalance: consistenthash
-    mock: true
-    filter: ConsumerAuthFilter
-  provider:
-    threads: 15
-  cloud:
-    subscribed-services: 'spring-cloud-nacos-demo'
+        group: DEFAULT_GROUP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        extension-configs:
+          - refresh: true
+            dataId: dubbo.yaml
+          - refresh: true
+            dataId: logback.yaml
+        group: ${spring.cloud.nacos.discovery.group}
