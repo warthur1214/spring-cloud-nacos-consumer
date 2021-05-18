@@ -1,0 +1,1 @@
+ConsumerAuthFilter=com.warthur.nacos.dubbo.filter.ConsumerAuthFilter
