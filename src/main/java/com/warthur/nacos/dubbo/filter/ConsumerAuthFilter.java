@@ -1,6 +1,7 @@
 package com.warthur.nacos.dubbo.filter;
 
 import com.warthur.nacos.consumer.config.SpringApp;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.*;
@@ -10,6 +11,7 @@ import org.apache.dubbo.rpc.*;
  * @date 2021/03/12
  */
 @Activate(group = CommonConstants.CONSUMER)
+@Slf4j
 public class ConsumerAuthFilter implements Filter {
 
     /**
