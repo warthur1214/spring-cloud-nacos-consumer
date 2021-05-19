@@ -7,6 +7,6 @@ package com.warthur.nacos.dubbo;
 public class TestServiceMock implements TestService {
     @Override
     public String getConfig() {
-        return "服务降级";
+        return "TestServiceMock";
     }
 }

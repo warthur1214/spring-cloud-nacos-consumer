@@ -22,3 +22,23 @@ spring:
           - refresh: true
             dataId: logback.yaml
         group: ${spring.cloud.nacos.discovery.group}
+
+    sentinel:
+      datasource:
+        flow:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            data-id: ${spring.application.name}-flow-rules.json
+            rule-type: flow
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            username: ${spring.cloud.nacos.username}
+            password: ${spring.cloud.nacos.password}
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            data-id: ${spring.application.name}-degrade-rules.json
+            rule-type: degrade
+      eager: true

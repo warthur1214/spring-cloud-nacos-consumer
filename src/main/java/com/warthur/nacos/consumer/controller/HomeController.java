@@ -1,5 +1,8 @@
 package com.warthur.nacos.consumer.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.SentinelRpcException;
+import com.warthur.nacos.consumer.handler.SentinelExceptionHandler;
 import com.warthur.nacos.consumer.service.FeignTestService;
 import com.warthur.nacos.dubbo.TestService;
 import org.apache.dubbo.config.annotation.DubboReference;
