@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class SentinelExceptionHandler {
-    public static String blockExceptionHandle(String name, BlockException exception) {
+    public static String blockExceptionHandle(BlockException exception) {
         exception.printStackTrace();
         log.info("sentinel 熔断处理 {}", "SentinelExceptionHandler");
         return "Sentinel 熔断处理函数";
