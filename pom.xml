@@ -18,7 +18,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>com.warthur.nacos.demo.MainApplication</start-class>
+        <start-class>com.warthur.nacos.consumer.ConsumerApplication</start-class>
         <maven.test.skip>true</maven.test.skip>
 
         <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
