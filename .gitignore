@@ -3,4 +3,4 @@
 logs
 target/*
 src/test
-/src/main/resources/application.ymlz
+/src/main/resources/application.yml
