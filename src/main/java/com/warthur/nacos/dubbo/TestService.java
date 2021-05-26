@@ -8,9 +8,4 @@ package com.warthur.nacos.dubbo;
 public interface TestService {
 
     String getConfig();
-
-    default String getConfigFallBack() {
-        System.out.println("服务降级");
-        return "服务降级";
-    }
 }
